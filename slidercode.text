@@ -1,0 +1,93 @@
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import img1 from '../../../assets/images/slider/1.jpg'
+import img2 from '../../../assets/images/slider/2.jpg'
+import img3 from '../../../assets/images/slider/3.jpg'
+import img4 from  '../../../assets/images/slider/12.jpg';
+import img5 from '../../../assets/images/slider/5.jpg'
+import img6 from '../../../assets/images/slider/6.jpg'
+import img7 from '../../../assets/images/slider/7.jpg'
+import img8 from '../../../assets/images/slider/8.jpg'
+import img9 from '../../../assets/images/slider/9.jpg'
+import img10 from '../../../assets/images/slider/10.jpg'
+import img11 from '../../../assets/images/slider/11.jpg'
+
+const Sliderr = () => {
+  let k = ">";
+  return (
+    <div className="w-full h-[100%] lg:h-[70vh] relative">
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation={{
+          nextEl: '.swiper-button-next-custom',
+          prevEl: '.swiper-button-prev-custom',
+        }}
+        pagination={{ clickable: true }}
+        loop={true} // Enable loop
+        modules={[Navigation, Pagination]}
+        className="h-full"
+      >
+        {/* Slide 1 */}
+        <SwiperSlide className="relative">
+          <img
+            className="w-full h-full object-cover"
+            src={img2}
+            alt="Slide 1"
+          />
+          <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 p-4 text-center text-white">
+            {/* Add content here if needed */}
+          </div>
+        </SwiperSlide>
+
+        {/* Slide 2 */}
+        <SwiperSlide className="relative">
+          <img
+            className="w-full h-full object-cover"
+            src={img1}
+            alt="Slide 2"
+          />
+          <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 p-4 text-center text-white">
+            {/* Add content here if needed */}
+          </div>
+        </SwiperSlide>
+
+        {/* Slide 3 */}
+        <SwiperSlide className="relative">
+          <img
+            className="w-full h-full object-cover"
+            src={img3}
+            alt="Slide 3"
+          />
+          <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 p-4 text-center text-white">
+            {/* Add content here if needed */}
+          </div>
+        </SwiperSlide>
+      </Swiper>
+
+      {/* Custom Next Button */}
+      <div className="swiper-button-next-custom absolute right-5 top-1/2 transform -translate-y-1/2 z-10 bg-[rgb(28,187,180)] p-3  shadow-lg hover:bg-gray-300 transition">
+        <img
+          src="https://img.icons8.com/ios-filled/50/000000/chevron-right.png"
+          alt="Next"
+          className="w-2 h-2 lg:w-4 lg:h-4"
+        />
+      </div>
+
+      {/* Custom Prev Button */}
+      <div className="swiper-button-prev-custom absolute left-5 top-1/2 transform -translate-y-1/2 z-10 bg-[rgb(28,187,180)] p-3 shadow-lg hover:bg-gray-300 transition">
+        <img
+          src="https://img.icons8.com/ios-filled/50/000000/chevron-left.png"
+          alt="Prev"
+          className="w-2 h-2 lg:w-4 lg:h-4"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Sliderr;
